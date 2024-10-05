@@ -1,0 +1,10 @@
+<% if (user && user.isMember) { %>
+    <p>Author: <%= message.User.firstName %> <%= message.User.lastName %></p>
+    <p>Date: <%= message.timestamp %></p>
+  <% } %>
+  <% if (user && user.isAdmin) { %>
+    <form action="/message/<%= message.id %>" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+  <% } %>
+  

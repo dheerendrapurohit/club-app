@@ -1,0 +1,8 @@
+app.get('/', async (req, res) => {
+    const messages = await Message.findAll({
+      include: [{ model: User }]
+    });
+  
+    res.render('index', { messages, user: req.user });
+  });
+  
